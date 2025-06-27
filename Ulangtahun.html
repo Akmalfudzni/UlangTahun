@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun Mila</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('Ulangtahun.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-top: 0.5em;
+      color: #ffd369;
+    }
+
+    video {
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      max-width: 90%;
+      height: auto;
+      z-index: 1;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      padding: 0 20px;
+      color: #ffffff;
+      z-index: 1;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -100px;
+      font-size: 20px;
+      color: rgba(255, 105, 180, 0.7);
+      animation: rise 20s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .button-container {
+      margin-top: 20px;
+      z-index: 2;
+    }
+
+    .btn {
+      background-color: #ffd369;
+      color: #1e1e2f;
+      border: none;
+      width: 100px;
+      height: 100px;
+      font-size: 0;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.4s ease;
+      clip-path: circle(50% at 50% 50%);
+      background: #ffd369;
+    }
+
+    .btn::before {
+      content: '🎁';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+    }
+
+    .btn:hover {
+      background-color: #ffb347;
+      clip-path: path('M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z');
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Selamat Ulang Tahun, Mila!</h1>
+
+  <p>
+    Hari ini aku nggak bisa ada di sana, Untuk Jakarta dari Jogja , ku kirimkan cerita kecil. Sebuah animasi tentang rasa yang terus hidup di jarak, dan waktu yang belum mempertemukan.
+  </p>
+
+  <!-- Video animatic dari file GitHub -->
+  <video controls autoplay loop>
+    <source src="https://username.github.io/repo-name/video.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video ini.
+  </video>
+
+  <p> Untuk kamu yang selalu hebat, tetap semangat, dan pantang menyerah. <br>
+    Terima kasih sudah jadi kamu.<br>
+    Selamat ulang tahun, Mila.<br>
+    Tunggu aku, kita bakal rayain bareng nanti.<br>
+    Mari kita rayakan hal-hal yang sudah kamu lewati<br>
+  </p>
+
+
+  <div class="button-container">
+    <button class="btn" onclick="alert('Semoga suka ya, Milaku ✨')"></button>
+  </div>
+
+  <script>
+    // Buat animasi heart 💖
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💖';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.animationDuration = `${10 + Math.random() * 10}s`;
+      heart.style.fontSize = `${14 + Math.random() * 20}px`;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
